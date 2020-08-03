@@ -1,0 +1,58 @@
+---
+##title: "AOC Project Map"
+##author: "Willianto Asalim"
+##date: "26/07/2020"
+##output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Interactive Map of AOC Projects in Indonesia
+
+**Created Date: 03 August 2020 by Willianto Asalim**
+
+*Click the icons to visit the websites.*
+
+```{r, MelIcon, echo=FALSE, warning=FALSE, message=FALSE}
+library(leaflet)
+
+#aoc_logo <- makeIcon(
+#  iconUrl = ""
+#  iconWidth = 
+#)
+  
+  
+aocSites <- c(
+  "<a href='https://www.australiaoikoscare.org/projects/indonesia/alfa-omega-school-depok/'>Alfa Omega School Depok</a>",
+  "<a href='https://www.australiaoikoscare.org/projects/indonesia/alfa-omega-school-marunda/'>Alfa Omega School Marunda</a>",
+  "<a href='https://www.australiaoikoscare.org/projects/indonesia/alfa-omega-school-bantargebang/'>Alfa Omega School Bantar Gebang</a>",
+  "<a href='https://www.australiaoikoscare.org/projects/indonesia/alfa-omega-school-batam/'>Alfa Omega School Batam</a>",
+  "<a href='https://www.australiaoikoscare.org/projects/indonesia/efata-bali-school/'>Efata Bali</a>"
+)
+aoc_loc <- data.frame(name = c("AOS Depok", "AOS Marunda", "AOS Bantar Gebang", "AOS Batam", "Efata Bali"),
+                        rad = c(30, 20, 20, 20, 20),
+                        lat = c(-6.413565, -6.121515, -6.348067, 1.053502, -8.632195),
+                        lng = c(106.797055, 106.956263, 106.997677, 104.125114, 115.190552))
+aoc_loc %>%
+  leaflet() %>%
+  addTiles() %>%
+  addMarkers(popup = aocSites) %>%
+  addCircles(weight = 1, radius = sqrt(aoc_loc$rad) * 10) %>%
+  addLegend(labels = "Community Impact Radius", colors = c("blue"))
+```
+
+
+## AOC Causes - Visual Proposal change
+
+These are the 5 locations of AOC Community Projects with links when you click on the markers.
+
+- AOS Depok 
+- AOS Marunda
+- AOS Bantar Gebang
+- AOS Batam
+- Efata Bali
+
+
+**Today is `r format(Sys.time(), '%d %B, %Y')`**

@@ -1,0 +1,10 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/645590/f216f5b0a86442fb9255f66e4c519864
+bundleId: https://api.rpubs.com/api/v1/document/645590/f216f5b0a86442fb9255f66e4c519864
+url: http://rpubs.com/asalimw/645590
+when: 1596456858.26172
